@@ -4,7 +4,7 @@
   "author": "c_x",
   "license": "MIT",
   "name": "fast-echarts-drag-resizable-react",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "keywords": [
     "React",
     "drag",
@@ -30,8 +30,9 @@
   "files": [
     "dist"
   ],
-  "module": "dist/esm/index.js",
-  "typings": "dist/esm/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

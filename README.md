@@ -4,8 +4,6 @@
 
 See the docs, tutorials and examples on the website:
 
-<!-- [react-drag-resizable-docs](https://18888628835.github.io/react-drag-resizable/) -->
-
 ## Install
 
 ```bash

@@ -6,14 +6,35 @@ on:
       - master # default branch
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-      - run: npm install
-      - run: npm run docs:build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./docs-dist
+  # deploy:
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: npm install
+  #     - run: npm run docs:build
+  #     - name: Deploy
+  #       uses: peaceiris/actions-gh-pages@v3
+  #       with:
+  #         github_token: ${{ secrets.ACCESS_TOKEN }}
+  #         publish_dir: ./docs-dist
+    build-and-deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v1
+          with:
+              node-version: '14.x'
+        - name: ENV
+          run: |
+            node -v
+            npm -v
+            npm config set registry https://registry.npm.taobao.org
+        - name: Install and Build # 安装依赖、打包，如果提前已打包好无需这一步
+          run: |
+            npm install
+            npm run docs:build
+        - name: Deploy # 部署
+          uses: JamesIves/github-pages-deploy-action@v4.3.3
+          with:
+            branch: gh-pages # 部署后提交到那个分支
+            folder: docs-dist # 这里填打包好的目录名称

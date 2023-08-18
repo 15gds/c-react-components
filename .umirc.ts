@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'fast-echarts-drag-resizable-react',
+  title: 'c-react-components',
   favicon:
     'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
   logo: 'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
@@ -11,8 +11,8 @@ export default defineConfig({
   alias: {
     src: './src',
   },
-  base: '/fast-echarts-drag-resizable-react/',
-  publicPath: '/fast-echarts-drag-resizable-react/',
+  base: '/c-react-components/',
+  publicPath: '/c-react-components/',
   apiParser: {
     propFilter: {
       // 是否忽略从 node_modules 继承的属性，默认值为 false

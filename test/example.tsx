@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { DragResizeBox } from 'fast-echarts-drag-resizable-react';
+import { DragResizeBox } from 'c-react-components';
 
 const App = () => (
   <div style={{ height: '300px', maxWidth: '300px' }}>

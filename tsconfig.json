@@ -13,6 +13,7 @@
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
     },
+    "lib": ["DOM.Iterable"],
     "allowSyntheticDefaultImports": true
   },
   "exclude": [

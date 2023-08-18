@@ -1,7 +1,7 @@
 ---
 hero:
-  title: fast-echarts-drag-resizable-react
-  desc: fast-echarts-drag-resizable-react site example
+  title: c-react-components
+  desc: c-react-components site example
   actions:
     - text: Getting Started
       link: /components
@@ -18,4 +18,4 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
 
-## Hello fast-echarts-drag-resizable-react!
+## Hello c-react-components!

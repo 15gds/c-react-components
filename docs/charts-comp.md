@@ -2,16 +2,16 @@
 nav:
   title: 图表组件
   path: /charts
+  order: 1
 group:
   title: 图表组件
-  order: 1
 ---
 
-# 图表组件 基本使用
+# 图表组件
 
 ```tsx
 import React from 'react';
-import { ChartsComp } from 'fast-echarts-drag-resizable-react';
+import { ChartsComp } from 'c-react-components';
 import * as echarts from 'echarts';
 let base = +new Date(2016, 9, 3);
 let oneDay = 24 * 3600 * 1000;
@@ -33,17 +33,17 @@ for (var i = 1; i < 10; i++) {
 let option = {
   title: {
     left: 'center',
-    text: 'Tootip and dataZoom on Mobile Device'
+    text: 'Tootip and dataZoom on Mobile Device',
   },
   legend: {
     top: 'bottom',
-    data: ['Intention']
+    data: ['Intention'],
   },
   tooltip: {
     triggerOn: 'none',
     position: function (pt) {
       return [pt[0], 130];
-    }
+    },
   },
   toolbox: {
     left: 'center',
@@ -51,10 +51,10 @@ let option = {
     top: 55,
     feature: {
       dataZoom: {
-        yAxisIndex: 'none'
+        yAxisIndex: 'none',
       },
-      restore: {}
-    }
+      restore: {},
+    },
   },
   xAxis: {
     type: 'time',
@@ -63,49 +63,49 @@ let option = {
       snap: true,
       lineStyle: {
         color: '#7581BD',
-        width: 2
+        width: 2,
       },
       label: {
         show: true,
         formatter: function (params) {
           return echarts.format.formatTime('yyyy-MM-dd', params.value);
         },
-        backgroundColor: '#7581BD'
+        backgroundColor: '#7581BD',
       },
       handle: {
         show: true,
-        color: '#7581BD'
-      }
+        color: '#7581BD',
+      },
     },
     splitLine: {
-      show: false
-    }
+      show: false,
+    },
   },
   yAxis: {
     type: 'value',
     axisTick: {
-      inside: true
+      inside: true,
     },
     splitLine: {
-      show: false
+      show: false,
     },
     axisLabel: {
       inside: true,
-      formatter: '{value}\n'
+      formatter: '{value}\n',
     },
-    z: 10
+    z: 10,
   },
   grid: {
     top: 110,
     left: 15,
     right: 15,
-    height: 160
+    height: 160,
   },
   dataZoom: [
     {
       type: 'inside',
-      throttle: 50
-    }
+      throttle: 50,
+    },
   ],
   series: [
     {
@@ -116,22 +116,22 @@ let option = {
       symbolSize: 5,
       sampling: 'average',
       itemStyle: {
-        color: '#0770FF'
+        color: '#0770FF',
       },
       stack: 'a',
       areaStyle: {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgba(58,77,233,0.8)'
+            color: 'rgba(58,77,233,0.8)',
           },
           {
             offset: 1,
-            color: 'rgba(58,77,233,0.3)'
-          }
-        ])
+            color: 'rgba(58,77,233,0.3)',
+          },
+        ]),
       },
-      data: data
+      data: data,
     },
     {
       name: 'Fake Data',
@@ -142,29 +142,29 @@ let option = {
       symbolSize: 5,
       sampling: 'average',
       itemStyle: {
-        color: '#F2597F'
+        color: '#F2597F',
       },
       areaStyle: {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
           {
             offset: 0,
-            color: 'rgba(213,72,120,0.8)'
+            color: 'rgba(213,72,120,0.8)',
           },
           {
             offset: 1,
-            color: 'rgba(213,72,120,0.3)'
-          }
-        ])
+            color: 'rgba(213,72,120,0.3)',
+          },
+        ]),
       },
-      data: data2
-    }
-  ]
+      data: data2,
+    },
+  ],
 };
 
 export default () => {
   return (
     <div style={{ height: '300px', maxWidth: '300px' }}>
-            <ChartsComp style={{ width: '800px', height: '330px' }} option={option}/>
+      <ChartsComp style={{ width: '800px', height: '330px' }} option={option} />
     </div>
   );
 };
@@ -172,9 +172,9 @@ export default () => {
 
 ```tsx
 import React from 'react';
-import { ChartsComp } from 'fast-echarts-drag-resizable-react';
+import { ChartsComp } from 'c-react-components';
 
-let option =  {
+let option = {
   series: [
     {
       name: 'Access From',
@@ -188,7 +188,7 @@ let option =  {
         formatter(param) {
           // correct the percentage
           return param.name + ' (' + param.percent * 2 + '%)';
-        }
+        },
       },
       data: [
         { value: 1048, name: 'Search Engine' },
@@ -203,30 +203,32 @@ let option =  {
             // stop the chart from rendering this piece
             color: 'none',
             decal: {
-              symbol: 'none'
-            }
+              symbol: 'none',
+            },
           },
           label: {
-            show: false
-          }
-        }
-      ]
-    }
+            show: false,
+          },
+        },
+      ],
+    },
   ],
-  xAxis:{
-    show:false
+  xAxis: {
+    show: false,
   },
-  yAxis:{
-    show:false
-  }
-}
+  yAxis: {
+    show: false,
+  },
+};
 export default () => {
   return (
     <div style={{ height: '300px', maxWidth: '300px' }}>
-            <ChartsComp style={{ width: '800px', height: '330px' }} option={option}/>
+      <ChartsComp style={{ width: '800px', height: '330px' }} option={option} />
     </div>
   );
 };
 ```
 
-基于ECharts库进行复用封装，减少引入冗余代码，属性配置请参考https://echarts.apache.org/zh/index.html
+基于 ECharts 库进行复用封装，减少引入冗余代码，属性配置请参考https://echarts.apache.org/zh/index.html
+
+<API  src='src/c-react-components/charts-comp/index'>

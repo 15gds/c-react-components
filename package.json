@@ -3,7 +3,7 @@
   "description": "React component",
   "author": "c_x",
   "license": "MIT",
-  "name": "fast-echarts-drag-resizable-react",
+  "name": "c-react-components",
   "version": "0.1.0",
   "keywords": [
     "React",
@@ -11,10 +11,10 @@
     "resize",
     "echarts"
   ],
-  "homepage": "https://15gds.github.io/fast-echarts-drag-resizable-react",
+  "homepage": "https://15gds.github.io/c-react-components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/15gds/fast-echarts-drag-resizable-react.git"
+    "url": "https://github.com/15gds/c-react-components.git"
   },
   "scripts": {
     "start": "dumi dev",
@@ -45,13 +45,17 @@
     ]
   },
   "dependencies": {
+    "antd": "^4.24.13",
     "echarts": "^5.4.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "react": "^18.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^13.0.0",
     "@types/jest": "^27.0.3",
+    "@types/lodash": "^4.14.197",
     "@umijs/fabric": "^2.8.1",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.1.0",

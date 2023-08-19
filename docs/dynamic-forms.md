@@ -10,7 +10,7 @@ group:
 # 动态表单
 
 ```tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DynamicForms } from 'c-react-components';
 import { HomeOutlined, UploadOutlined, InboxOutlined } from '@ant-design/icons';
 import { Select, Form, Upload } from 'antd';
@@ -239,10 +239,10 @@ export default () => {
       name: 'uploadFile',
       label: '上传',
       fieldOptions: {
-        valuePropName: 'fileList',
         listType: 'picture',
         name: 'uploadFile',
       },
+      valuePropName: 'fileList',
       icon: <UploadOutlined />,
     },
     {
@@ -284,8 +284,6 @@ export default () => {
 ```
 
 <API src='src/c-react-components/dynamic-forms/index'>
-
-## formItemOptionsProps
 
 ## formItemOptionsProps
 

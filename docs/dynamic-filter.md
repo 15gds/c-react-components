@@ -214,4 +214,6 @@ export default () => {
 };
 ```
 
+用于条件搜索时进行使用，建议搭配动态表格一同使用。
+
 <API src='src/c-react-components/dynamic-filter/index'>

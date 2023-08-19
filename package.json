@@ -9,7 +9,13 @@
     "React",
     "drag",
     "resize",
-    "echarts"
+    "echarts",
+    "dynamic-form",
+    "form",
+    "dynamic-table",
+    "table",
+    "antd",
+    "dumi"
   ],
   "homepage": "https://15gds.github.io/c-react-components",
   "repository": {
@@ -25,7 +31,8 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "analyze": "cross-env ANALYZE=1 dumi build"
   },
   "files": [
     "dist"
@@ -58,11 +65,14 @@
     "@types/lodash": "^4.14.197",
     "@umijs/fabric": "^2.8.1",
     "@umijs/test": "^3.0.5",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "cross-env": "^7.0.3",
     "dumi": "^1.1.0",
     "father": "^4.0.0-rc.2",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
+    "umi-webpack-bundle-analyzer": "^4.4.2",
     "yorkie": "^2.0.0"
   },
   "config": {

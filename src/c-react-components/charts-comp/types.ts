@@ -1,4 +1,4 @@
-export interface BaseChartsCompPropsProps {
+export interface BaseChartsCompProps {
   /**
    * @default --
    * @description 样式
@@ -13,4 +13,4 @@ export interface BaseChartsCompPropsProps {
     [propName: string]: any;
   };
 }
-export type ChartsCompProps = BaseChartsCompPropsProps;
+export type ChartsCompProps = BaseChartsCompProps;

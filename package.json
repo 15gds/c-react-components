@@ -17,6 +17,18 @@
     "antd",
     "dumi"
   ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "homepage": "https://15gds.github.io/c-react-components",
   "repository": {
     "type": "git",
@@ -52,11 +64,13 @@
     ]
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
     "antd": "^4.24.13",
     "echarts": "^5.4.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "react": "^18.0.0"
+    "react": "^18.0.0",
+    "three": "0.136"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
@@ -66,13 +80,16 @@
     "@umijs/fabric": "^2.8.1",
     "@umijs/test": "^3.0.5",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "compression-webpack-plugin": "^1.1.12",
     "cross-env": "^7.0.3",
     "dumi": "^1.1.0",
     "father": "^4.0.0-rc.2",
+    "file-loader": "^6.2.0",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "umi-webpack-bundle-analyzer": "^4.4.2",
+    "url-loader": "^4.1.1",
     "yorkie": "^2.0.0"
   },
   "config": {

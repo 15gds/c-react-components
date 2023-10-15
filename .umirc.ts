@@ -3,6 +3,7 @@ import { defineConfig } from 'dumi';
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === 'production';
+
 export default defineConfig({
   title: 'c-react-components',
   favicon:
@@ -13,6 +14,9 @@ export default defineConfig({
   //设置别名
   alias: {
     src: './src',
+  },
+  define: {
+    'process.env.BASE_URL': isProd ? '/c-react-components/' : '/',
   },
   base: '/c-react-components/',
   publicPath: '/c-react-components/',
@@ -37,22 +41,62 @@ export default defineConfig({
     logLevel: 'info',
     defaultSizes: 'parsed',
   },
-
+  chainWebpack: function (config, { webpack }) {
+    config.module
+      .rule('fbx')
+      .test(/\.(fbx)$/)
+      .use()
+      .loader('url-loader')
+      .end();
+  },
   // chainWebpack: function (config, { webpack }) {
   //   config.merge({
   //     optimization: {
   //       splitChunks: {
-  //         chunks: 'all',
-  //         minSize: 1000,
+  //         chunks: 'async',
+  //         minSize: 30000,
   //         minChunks: 2,
   //         automaticNameDelimiter: '.',
   //         cacheGroups: {
-  //           vendor: {
-  //             name: 'vendors',
-  //             test({ resource }) {
-  //               return /[\\/]node_modules[\\/]/.test(resource);
-  //             },
+  //           react: {
+  //             name: 'react',
+  //             priority: 20,
+  //             test: /[\\/]node_modules[\\/](react|react-dom|react-dom-router)[\\/]/,
+  //           },
+  //           echarts: {
+  //             name: 'echarts',
+  //             chunks: 'async',
+  //             test: /[\\/]node_modules[\\/](echarts|zrender)[\\/]/,
   //             priority: 10,
+  //             enforce: true,
+  //           },
+  //           antdesigns: {
+  //             name: 'antdesigns',
+  //             chunks: 'all',
+  //             test: /[\\/]node_modules[\\/](antd|@ant-design|antd-mobile)/,
+  //             priority: 10,
+  //             enforce: true,
+  //           },
+  //           // antv: {
+  //           //   name: 'antv',
+  //           //   chunks: 'all',
+  //           //   test: /[\\/]node_modules[\\/](@antv)[\\/]/,
+  //           //   priority: 10,
+  //           //   enforce: true,
+  //           // },
+  //           lodash: {
+  //             name: 'lodash',
+  //             test: /[\\/]node_modules[\\/]lodash[\\/]/,
+  //             priority: -2,
+  //             enforce: true,
+  //           },
+  //           vendors: {
+  //             name: 'vendors',
+  //             test({ resource }: any) {
+  //               return /[\\/]node_modules[\\/]/.test(resource)
+  //             },
+  //             priority: -11,
+  //             enforce: true,
   //           },
   //         },
   //       },
@@ -60,15 +104,15 @@ export default defineConfig({
   //   });
 
   //   //在生产环境开启gzip压缩
-  //   if (isProd) {
+  //   // if (isProd) {
   //     // Gzip压缩
-  //     config.plugin('compression-webpack-plugin').use(CompressionPlugin, [
-  //       {
-  //         test: /\.(js|css|html)$/i, // 匹配
-  //         threshold: 10240, // 超过10k的文件压缩
-  //         deleteOriginalAssets: false, // 不删除源文件
-  //       },
-  //     ]);
+  //     // config.plugin('compression-webpack-plugin').use(CompressionPlugin, [
+  //     //   {
+  //     //     test: /\.(js|css|html)$/i, // 匹配
+  //     //     threshold: 10240, // 超过10k的文件压缩
+  //     //     deleteOriginalAssets: false, // 不删除源文件
+  //     //   },
+  //     // ]);
   //   }
   // },
   // more config: https://d.umijs.org/config

@@ -12,4 +12,7 @@ export {
   DynamicForms,
   DynamicFilter,
   DynamicTable,
+  UploadTable,
+  ThreeCity,
+  AmapComp,
 } from './c-react-components';
